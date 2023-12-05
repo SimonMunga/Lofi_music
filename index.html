@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fav Lofi</title>
+        <link rel="stylesheet" href="music.css">
+        <link rel="shortcut icon" type = "x-icon" href="wicon.png">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class = "navbar">
+                <a href="index.html"><img src = "logo3.png" class = "logo"></a>
+                <ul>
+                    <li><a href = "#" onclick="togglePopup()"> About </a></li>
+                    <li><a href="https://www.youtube.com/c/LofiGirl/videos"> YouTube Page</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="leftCol">
+                    <h1>My Fav <br> Lo-Fi <br> Mix</h1>
+                </div>
+                <div class="rightCol">
+                    <p>Click to play</p>
+                    <img src="play.png" alt="playIcon" id = "icon">
+                </div>
+                <div class="footer">
+                    <p>Created by Shade</p>
+                </div>
+            </div>
+
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="area">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+                    <h1>About</h1>
+                    <p>Shawn, one of my good friends introduced me to 
+                    Lofi music back in 2018 and since then I have been really hooked. </p>
+                    <p> One thing I love about Lofi music is how it manages to keep 
+                    me calm on days when I am feeling low or on days when I just want to 
+                    listen to laid back tunes or even study. </p>
+                    <p> Because of my love for lofi music, I decided to share a mix by Lofi Girl (on YouTube) 
+                    that I really enjoy and thought it would be awesome to create a webiste using html and 
+                    css instead of just sharing it on social media. </p>
+                    <p> If you love what I did, please give me feedback by sending an email to samthedev17@gmail.com
+                    or if you know me personally, shoot me a text! </p>
+                    <p> Enjoy :) </p>
+                </div>
+            </div>
+
+        </div>
+
+        <audio id="lofiSongs">
+            <source src="C:\Users\NSSF\Desktop\MusicWebsite\music.mp3" type="audio/mp3">
+        </audio>
+
+        <script>
+            var lofiSongs = document.getElementById("lofiSongs")
+            var icon = document.getElementById("icon")
+            icon.onclick = function (){
+                if(lofiSongs.paused){
+                    lofiSongs.play();
+                    icon.src = "pause.png";
+                }else{
+                    lofiSongs.pause();
+                    icon.src = "play.png";
+                }
+            }
+            function togglePopup(){
+                document.getElementById("popup-1").classList.toggle("active")
+            }
+        </script>
+        <!-- This webiste was created by Samantha Folashade -->
+    </body>
+</html>
